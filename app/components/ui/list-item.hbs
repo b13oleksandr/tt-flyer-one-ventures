@@ -1,0 +1,12 @@
+<div class="list-item {{if @isActive "list-item--activated"}}">
+  <img src={{@emoji}} alt="" class="list-item__img">
+  <p class="list-item__text">
+    {{@initial}}
+  </p>
+
+  <div class="list-item__active-wrap">
+    <div class="list-item__active-circle">
+      <div class="list-item__active" />
+    </div>
+  </div>
+</div>

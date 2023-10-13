@@ -1,0 +1,25 @@
+<div class="section-phone">
+  <div class="section-phone__input-wrap">
+    <Ui::InputPhone
+      @value={{this.phone}}
+      @updateValue={{this.onInputPhone}}
+    />
+  </div>
+
+  <div {{ on 'click' this.save }}>
+    <Ui::Button
+      @fullWidth={{true}}
+      @disabled={{not this.phoneIsValid}}
+      @initial={{@buttonText}}
+    />
+  </div>
+
+  <div class="section-phone__bottom">
+    <div class="section-phone__privacy">
+      <img src="/images/quiz/shield.svg" alt="">
+      <div class="section-phone__privacy-text">
+        {{@privacy}}
+      </div>
+    </div>
+  </div>
+</div>

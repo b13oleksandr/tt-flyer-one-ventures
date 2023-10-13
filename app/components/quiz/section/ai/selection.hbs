@@ -1,0 +1,29 @@
+<div class="ai-selection">
+  <div>
+    <div
+      class="ai-selection-progress-bar"
+      style="background: radial-gradient(closest-side, white 79%, transparent 80% 100%), conic-gradient(#FE9A3E {{this.progress}}%, #FFE5CC 0);"
+    >
+      <p class="ai-selection-progress-bar__text">{{this.roundedProgress}}%</p>
+    </div>
+  </div>
+
+  <div class="ai-selection__slider-wrap">
+    <div class="ai-selection__cover ai-selection__cover--top"></div>
+    <div class="ai-selection__cover ai-selection__cover--bottom"></div>
+
+    <div class="ai-selection-slider">
+      <div {{ did-insert this.sliderInit }} class="swiper" style="height: 22px;">
+        <div class="swiper-wrapper">
+          {{#each this.quizService.currentItem.body.items as |item|}}
+            <div class="swiper-slide">
+              <div class="ai-selection-slider__item">
+                {{ item.title }}
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

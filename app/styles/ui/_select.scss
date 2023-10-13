@@ -1,0 +1,30 @@
+.select {
+  height: 48px;
+  border-radius: 8px;
+  border: 1px solid var(--c-gray-2);
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &__field {
+    padding-left: 16px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
+  }
+
+  &__arrow {
+    position: absolute;
+    right: 16px;
+  }
+}

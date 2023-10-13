@@ -1,0 +1,11 @@
+<div class="quiz-options-item">
+  {{#each @items as |item|}}
+    <div {{ on 'click' (fn this.onItem item) }}>
+      <Ui::ListItem
+        @initial={{item.title}}
+        @emoji={{item.emoji}}
+        @isActive={{this.isActive item}}
+      />
+    </div>
+  {{/each}}
+</div>

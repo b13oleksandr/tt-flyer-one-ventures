@@ -1,0 +1,9 @@
+<div class="select">
+  <select class="select__field" {{ on 'change' this.onChange }}>
+    {{#each @items as |item|}}
+      <option value={{item.value}}>{{item.title}}</option>
+    {{/each}}
+  </select>
+
+  <img src="/icons/ui/arrow-down-2.svg" alt="" class="select__arrow">
+</div>

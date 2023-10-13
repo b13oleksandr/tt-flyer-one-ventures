@@ -1,0 +1,15 @@
+<div class="quiz-card-item">
+  <p class="quiz-card-item__title">
+    {{@title}}
+  </p>
+  <img src={{@imageSrc}} alt="" class="quiz-card-item__img" />
+  <p class="quiz-card-item__text">
+    {{@description}}
+  </p>
+  <div {{ on 'click' this.quizService.nextItem }}>
+    <Ui::Button
+      @fullWidth={{true}}
+      @initial={{@buttonText}}
+    />
+  </div>
+</div>

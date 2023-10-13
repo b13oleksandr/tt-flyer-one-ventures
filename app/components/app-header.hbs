@@ -1,0 +1,21 @@
+<header>
+  <div class="header">
+    <div class="header__inner">
+      <img
+        {{ on 'click' this.quizService.prevItem }}
+        src="/images/arrow-back.svg" alt=""
+        class="header__prev-button"
+      >
+
+      <img src="/images/logo.svg" alt="">
+
+      <p class="header__steps-counter">
+        <span class="header__current-index">{{this.quizService.realIndex}}</span> / {{this.quizService.totalItemsCount}}
+      </p>
+    </div>
+
+    <div class="header__progress">
+      <Quiz::Progress />
+    </div>
+  </div>
+</header>

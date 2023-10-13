@@ -1,0 +1,26 @@
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--c-white);
+  padding: 16px;
+  border-radius: 8px;
+  &__title {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px;
+  }
+  &__text {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
+    min-height: 143px;
+    color: var(--c-gray-4);
+  }
+  &__separator {
+    border-bottom: 1px solid #EFEDF0;
+    width: 100%;
+  }
+}

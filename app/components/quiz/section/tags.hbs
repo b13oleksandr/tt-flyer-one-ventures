@@ -1,0 +1,21 @@
+<div class="quiz-tags-item">
+  <div class="quiz-tags-item__tags">
+    {{#each @items as |item|}}
+      <div {{ on 'click' (fn this.onTag item) }}>
+        <Ui::Tag
+          @icon={{item.icon}}
+          @initial={{item.title}}
+          @isActive={{this.isActive item}}
+        />
+      </div>
+    {{/each}}
+  </div>
+
+  <div {{ on 'click' this.save }}>
+    <Ui::Button
+      @fullWidth={{true}}
+      @disabled={{not this.isValid}}
+      @initial="Continue"
+    />
+  </div>
+</div>

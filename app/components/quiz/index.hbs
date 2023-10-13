@@ -1,0 +1,87 @@
+{{#unless this.quizService.isCompleted}}
+  <div class="quiz">
+    <div class="quiz__inner">
+      <div class="quiz__step">
+        {{# if this.quizService.currentItem.title }}
+          <p class="quiz__title">
+            {{ this.quizService.currentItem.title }}
+          </p>
+        {{/if}}
+
+        {{# if this.quizService.currentItem.description }}
+          <p class="quiz__desc">
+            {{ this.quizService.currentItem.description }}
+          </p>
+        {{/if}}
+
+        <div class="quiz__body">
+          {{# if this.quizService.isOptionsSection }}
+            <Quiz::Section::Options
+              @items={{this.quizService.currentItem.body.items}}
+            />
+          {{/if}}
+
+          {{# if this.quizService.isCardSection }}
+            <Quiz::Section::Card
+              @title={{this.quizService.currentItem.body.title}}
+              @imageSrc={{this.quizService.currentItem.body.imageSrc}}
+              @description={{this.quizService.currentItem.body.description}}
+              @buttonText={{this.quizService.currentItem.body.button}}
+            />
+          {{/if}}
+
+          {{# if this.quizService.isTagsSection }}
+            <Quiz::Section::Tags
+              @items={{this.quizService.currentItem.body.items}}
+            />
+          {{/if}}
+
+          {{# if this.quizService.isAiSection }}
+            <Quiz::Section::Ai::Index />
+          {{/if}}
+
+          {{# if this.quizService.isPhoneSection }}
+            <Quiz::Section::Phone
+              @title={{this.quizService.currentItem.body.title}}
+              @privacy={{this.quizService.currentItem.body.privacy}}
+              @buttonText={{this.quizService.currentItem.body.button}}
+            />
+          {{/if}}
+
+          {{# if this.quizService.isBookingSection }}
+            <Quiz::Section::Booking
+              @buttonText={{this.quizService.currentItem.body.button}}
+            />
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+{{/unless}}
+
+{{# if this.quizService.isCompleted}}
+  <div class="result">
+    <p class="result__title">
+      Done!
+    </p>
+
+    <div>
+      <table>
+        <thead>
+        <tr style="text-align: left;">
+          <th>Title</th>
+          <th>Result</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each-in this.quizService.result as |key value|}}
+          <tr>
+            <td style="padding-right: 16px; padding-bottom: 8px; min-width: 50%; vertical-align: top;">{{ value.title }}</td>
+            <td style="padding-bottom: 8px; width: 50%; vertical-align: top;">{{ value.result }}</td>
+          </tr>
+        {{/each-in}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+{{/if}}

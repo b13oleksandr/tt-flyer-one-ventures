@@ -1,0 +1,31 @@
+<div class="section-date">
+  <div class="section-date__days">
+    <Ui::DatePicker
+      @value={{this.day}}
+      @startDate='10.1.2023'
+      @endDate="10.7.2023"
+      @updateValue={{this.onUpdateDay}}
+    />
+  </div>
+
+  <div>
+    <Ui::Select
+      @value={{this.time}}
+      @items={{this.timeList}}
+      @updateValue={{this.onChangeTime}}
+    />
+  </div>
+
+  <div class="section-date__timezone">
+    <span>Kyiv UTC +3</span>
+    <img src="/images/pencil.svg" alt="">
+  </div>
+
+  <div {{ on 'click' this.save }}>
+    <Ui::Button
+      @fullWidth={{true}}
+      @disabled={{not this.isValid}}
+      @initial={{@buttonText}}
+    />
+  </div>
+</div>

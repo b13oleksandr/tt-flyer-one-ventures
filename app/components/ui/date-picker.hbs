@@ -1,0 +1,8 @@
+<div class="date-picker">
+  {{#each this.daysBetweenDates as |item|}}
+    <div class="date-picker__item {{if (is-equal @value item) 'date-picker__item--active' ''}}" {{ on 'click' (fn this.onSelectItem item) }}>
+      <div class="date-picker__title">{{item.value}}</div>
+      <div class="date-picker__subtitle">{{item.title}}</div>
+    </div>
+  {{/each}}
+</div>
